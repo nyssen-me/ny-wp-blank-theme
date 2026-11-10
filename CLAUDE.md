@@ -135,7 +135,7 @@ There is **no root `templates.php` router** any more. The block loader in `funct
 <?php get_footer();
 ```
 
-`front-page.php` uses the same skeleton for the home page. Posts are **text only** (paragraph, heading, list, no ACF blocks and no post template), because `single.php` outputs their content inside its own `.grid-content` column, where section blocks do not fit.
+`front-page.php` uses the same skeleton for the home page. Posts are **text only** (paragraph, heading, list, quote, no ACF blocks and no post template), because `single.php` outputs their content inside its own `.grid-content` column, where section blocks do not fit.
 
 ### 2. `theme.json` (lockdown layer)
 
@@ -188,7 +188,7 @@ add_filter( 'allowed_block_types_all', function ( $allowed, $context ) {
         array_keys( WP_Block_Type_Registry::get_instance()->get_all_registered() ),
         fn( $name ) => str_starts_with( $name, 'acf/' )
     ) );
-    $core = [ 'core/paragraph', 'core/heading', 'core/list', 'core/list-item' ];
+    $core = [ 'core/paragraph', 'core/heading', 'core/list', 'core/list-item', 'core/quote' ];
     // Vary by $context->post->post_type where needed.
     return array_merge( $acf, $core );
 }, 10, 2 );
@@ -207,7 +207,7 @@ add_filter( 'should_load_separate_core_block_assets', '__return_true' );
 // Core and remote patterns are removed in functions/patterns.php.
 ```
 
-Optional (test before keeping): restrict core text blocks so they can only be used inside `acf/content`, by adding `'ancestor' => [ 'acf/content' ]` via the `register_block_type_args` filter. Check the empty-page behaviour, as `core/paragraph` is the default block.
+On pages (every post type except `post`), paragraph, heading, list and quote can only be used inside ACF blocks, so there is never loose text outside the `section` > `.container` > `.row` > `.column` structure. `ny_restrict_top_level_text_blocks()` sets their `ancestor` to all `acf/` blocks on the `current_screen` hook, and each block's InnerBlocks `allowedBlocks` decides which blocks accept them. It cannot go in `register_block_type_args`, which applies to every post type, because posts need these blocks at the top level. Do not wrap `the_content()` in a container in `page.php`: the sections already output their own. Quote also loses its background, minimum height, layout and "Plain" style in `ny_restrict_core_block_supports()`. Its text alignment button is built into the block and cannot be removed, so `blocks.css` cancels `.has-text-align-*` on `.wp-block-quote`.
 
 ### 4. ACF blocks (`templates/blocks/<slug>/`)
 
@@ -349,7 +349,7 @@ Example:
 - Do not add `Block Types: core/post-content` (that is for the "choose a pattern" modal, which is not used)
 - Never put `acf/hero` in a pattern: it is already in the page template and allows only one per page
 - Wrap sample text in `esc_html__()` so it is translatable
-- Core block markup must match what the block saves, or the editor flags the block as invalid. In WordPress 7: `<p>` with no class (paragraph `className` support is off), `<h2 class="wp-block-heading">`, `<ul class="wp-block-list">`
+- Core block markup must match what the block saves, or the editor flags the block as invalid. In WordPress 7: `<p>` with no class (paragraph `className` support is off), `<h2 class="wp-block-heading">`, `<ul class="wp-block-list">`, `<blockquote class="wp-block-quote">` (paragraphs inside, optional `<cite>`)
 - Easiest way to create one: build the layout in the editor, copy the markup from the code editor, paste into the file
 - Register pattern categories in `functions/patterns.php`
 - WordPress caches the list of pattern files in a transient. During local development, add `define( 'WP_DEVELOPMENT_MODE', 'theme' );` to `wp-config.php` so new pattern files show up straight away
@@ -375,7 +375,7 @@ WordPress 7.0 iframes the post editor when all inserted blocks are `apiVersion` 
 - If `main.js` bundles its own jQuery, a plugin that enqueues WordPress's jQuery would load a second copy. Prefer adding `'jquery'` as a dependency and dropping the jQuery prepend
 - Block CSS: in `assets/css/src/blocks.css` (imported in `assets/css/style.css`, the Prepros entry file), so all CSS is in one compiled, cached file that also styles the editor previews. Exception: heavy CSS needed on few pages (a map or slider block, for example) can go in a `style.css` in the block folder, declared in `block.json` as `"style": [ "file:./style.css" ]`, so it only loads where the block is used. WordPress inlines small block stylesheets in the page (up to 20 KB per page by default)
 - The PHP uses the framework's classes (see "Markup and container strategy"). Theme-specific classes the CSS should also cover: `.block__placeholder` (editor-only hints in blocks). `.screen-reader-text`, which WordPress core outputs in places, shares the `.visually-hidden` rule in `helpers.css`
-- **No WordPress block CSS on the front end.** `functions/cleanup.php` dequeues `wp-block-library`, removes the theme.json global styles and stops core blocks (paragraph, heading, list) loading their own stylesheets. Those styles mostly cover features the lockdown switches off, so `style-min.css` must style everything the blocks output, including plain `p`, `h2` to `h6`, `ul`/`ol` and links inside `.column`. The editor canvas still loads WordPress's block CSS, so check that previews still match the front end. WordPress's inline `sizes="auto"` image fix is removed too: the same rule is in `reset.css` (keep it, as WordPress still adds `sizes="auto"` to lazy-loaded images). So `style-min.css` is the only CSS on the front end
+- **No WordPress block CSS on the front end.** `functions/cleanup.php` dequeues `wp-block-library`, removes the theme.json global styles and stops core blocks (paragraph, heading, list, quote) loading their own stylesheets. Those styles mostly cover features the lockdown switches off, so `style-min.css` must style everything the blocks output, including plain `p`, `h2` to `h6`, `ul`/`ol`, `blockquote` and `cite`, and links inside `.column`. The editor canvas still loads WordPress's block CSS, so check that previews still match the front end. WordPress's inline `sizes="auto"` image fix is removed too: the same rule is in `reset.css` (keep it, as WordPress still adds `sizes="auto"` to lazy-loaded images). So `style-min.css` is the only CSS on the front end
 - **Ask Sergi before adding any build tooling** (npm, Sass, PostCSS, webpack, @wordpress/scripts, Vite, etc.)
 
 ## Build order
@@ -386,7 +386,7 @@ Work through these in order, and stop for Sergi's review after each stage:
 2. `functions/editor.php` lockdown
 3. Block loader, block category, and three proving blocks:
    - `acf/hero` (fields only)
-   - `acf/content` (InnerBlocks with paragraph, heading, list)
+   - `acf/content` (InnerBlocks with paragraph, heading, list, quote)
    - `acf/text-media` (text plus image, with a left/right layout option)
 4. Post type templates and locking (`functions/post-templates.php`)
 5. Patterns and pattern categories
@@ -401,7 +401,7 @@ Work through these in order, and stop for Sergi's review after each stage:
 - Code editor and lock controls are unavailable to editors
 - Block previews in the editor match the front end
 - Editor canvas is iframed (inspect the editor: the canvas should be inside an `iframe`)
-- New pages get the page template (locked hero plus a content block); posts offer only paragraph, heading and list
+- New pages get the page template (locked hero plus a content block); posts offer only paragraph, heading, list and quote
 - Theme section patterns appear in the Patterns tab under "Site sections", and no core patterns appear
 - Block CSS is in `style-min.css`; any block with its own `style.css` loads it only on pages using that block
 - No PHP notices or warnings with `WP_DEBUG` enabled

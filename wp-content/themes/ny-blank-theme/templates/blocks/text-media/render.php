@@ -26,7 +26,7 @@ if ( $is_preview ) {
 
 $ny_wrapper = get_block_wrapper_attributes( [ 'class' => implode( ' ', $ny_classes ) ] );
 
-$ny_allowed_blocks = [ 'core/heading', 'core/paragraph', 'core/list' ];
+$ny_allowed_blocks = [ 'core/heading', 'core/paragraph', 'core/list', 'core/quote' ];
 $ny_template       = [
 	[
 		'core/heading',

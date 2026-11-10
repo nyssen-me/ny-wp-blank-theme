@@ -7,3 +7,17 @@
         flex-direction: row-reverse;
     }
 }
+
+/* Quote (core/quote): citation under the quote text */
+blockquote cite {
+    display: block;
+    font-size: 1.6rem;
+    font-style: normal;
+}
+
+/* Quote (core/quote): cancel the text alignment button, which cannot be removed from the
+   block. Only the editor loads WordPress's .has-text-align-* rules, so this keeps the
+   preview matching the front end */
+.wp-block-quote[class*="has-text-align-"] {
+    text-align: inherit;
+}

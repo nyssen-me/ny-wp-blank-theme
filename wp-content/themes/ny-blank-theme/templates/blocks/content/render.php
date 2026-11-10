@@ -15,7 +15,7 @@
 
 $ny_wrapper = get_block_wrapper_attributes( $is_preview ? [ 'class' => 'wrapper' ] : [] );
 
-$ny_allowed_blocks = [ 'core/heading', 'core/paragraph', 'core/list' ];
+$ny_allowed_blocks = [ 'core/heading', 'core/paragraph', 'core/list', 'core/quote' ];
 $ny_template       = [
 	[
 		'core/heading',
