@@ -152,6 +152,16 @@ img {
   border-style: none;
 }
 
+/**
+ * Lazy-loaded images with sizes="auto" (added by WordPress): give them a large
+ * placeholder size before they load, so the browser does not pick a file that is too
+ * small. Replaces the inline style WordPress prints (see functions/cleanup.php).
+ */
+
+img:is([sizes=auto i], [sizes^="auto," i]) {
+  contain-intrinsic-size: 3000px 1500px;
+}
+
 /* Forms
    ========================================================================== */
 

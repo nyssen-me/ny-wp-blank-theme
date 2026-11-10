@@ -38,6 +38,15 @@ add_filter( 'emoji_svg_url', '__return_false' );
 remove_action( 'wp_enqueue_scripts', 'wp_enqueue_global_styles' );
 remove_action( 'wp_footer', 'wp_enqueue_global_styles', 1 );
 
+/*
+ * The inline sizes="auto" image fix: the same rule is in assets/css/src/reset.css. The
+ * deprecated wp_print_auto_sizes_contain_css_fix() is normally unhooked by its
+ * replacement, so it has to be removed as well, or it runs and triggers a deprecation
+ * notice. The sizes="auto" feature itself stays on.
+ */
+remove_action( 'wp_head', 'wp_enqueue_img_auto_sizes_contain_css_fix', 0 );
+remove_action( 'wp_head', 'wp_print_auto_sizes_contain_css_fix', 1 );
+
 /**
  * Dequeues the general block library CSS on the front end.
  */
