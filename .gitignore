@@ -1,0 +1,23 @@
+# This repository tracks only the theme and the project brief.
+# Everything else in the WordPress install (core, wp-config.php, plugins,
+# uploads, other themes) is ignored.
+
+# Ignore everything at the root...
+/*
+
+# ...except these files
+!/.gitignore
+!/CLAUDE.md
+
+# ...and the theme folder (each level has to be re-included in turn)
+!/wp-content/
+/wp-content/*
+!/wp-content/themes/
+/wp-content/themes/*
+!/wp-content/themes/ny-blank-theme/
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log

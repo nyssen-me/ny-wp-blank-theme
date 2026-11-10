@@ -1,0 +1,27 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "acf/content",
+	"title": "Content",
+	"description": "Text section with headings, paragraphs and lists.",
+	"category": "ny-blocks",
+	"icon": "text",
+	"keywords": [ "text", "paragraph", "copy" ],
+	"textdomain": "ny-blank-theme",
+	"acf": {
+		"blockVersion": 3,
+		"mode": "preview",
+		"renderTemplate": "render.php"
+	},
+	"supports": {
+		"align": false,
+		"anchor": true,
+		"html": false,
+		"customClassName": false,
+		"customCSS": false,
+		"color": false,
+		"spacing": false,
+		"typography": false,
+		"jsx": true
+	}
+}

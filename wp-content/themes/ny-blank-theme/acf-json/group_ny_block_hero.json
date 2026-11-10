@@ -1,0 +1,63 @@
+{
+    "key": "group_ny_block_hero",
+    "title": "Block: Hero",
+    "fields": [
+        {
+            "key": "field_ny_hero_heading",
+            "label": "Heading",
+            "name": "heading",
+            "type": "text",
+            "instructions": "The main heading of the page.",
+            "required": 1
+        },
+        {
+            "key": "field_ny_hero_text",
+            "label": "Intro text",
+            "name": "text",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "rows": 3,
+            "new_lines": ""
+        },
+        {
+            "key": "field_ny_hero_cta",
+            "label": "Button",
+            "name": "cta",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "return_format": "array"
+        },
+        {
+            "key": "field_ny_hero_image",
+            "label": "Image",
+            "name": "image",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "return_format": "id",
+            "preview_size": "medium",
+            "library": "all"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/hero"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1793810427
+}

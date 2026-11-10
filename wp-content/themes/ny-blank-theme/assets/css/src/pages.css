@@ -1,0 +1,59 @@
+/*! Pages */
+/* ==========================================================================*/
+
+.membership-header {
+    /*display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;*/
+    display: grid;
+    grid-template-columns: auto 30rem;
+}
+
+@media screen and (max-width: 1280px) {
+    
+    .membership-header {
+        grid-template-columns: 1fr;
+        grid-template-rows: 2;
+    }
+}
+
+input[type='search'].search-by-name {
+    height: 3.2rem;
+    padding: 0.6rem 0 0.7rem;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-left-color: transparent;
+    max-width: 30rem;
+}
+
+input[type='search'].search-by-name::placeholder {
+    color: var(--grey-color);
+}
+
+/* Further reading section */
+.bordered-3cols .row .column {
+    padding: 5rem 5rem 2rem 1rem;
+    
+    @media screen and (max-width: 768px) {
+        padding: 5rem 1rem 2rem 1rem;
+    }
+}
+
+.bordered-3cols .row .column:not(:first-child) {
+    padding: 5rem 5rem 2rem 5rem;
+    
+    @media screen and (max-width: 768px) {
+        padding: 5rem 1rem 2rem 1rem;
+    }
+}
+
+.bordered-3cols .row .column.border-left {
+    border-left: 0.15rem solid var(--font-primary);
+    
+    @media screen and (max-width: 768px) {
+        border-left: none;
+        border-top: 0.15rem solid var(--font-primary);
+        border-bottom: none;
+    }
+}

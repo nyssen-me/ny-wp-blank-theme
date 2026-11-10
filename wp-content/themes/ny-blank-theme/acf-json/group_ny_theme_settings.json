@@ -1,0 +1,163 @@
+{
+    "key": "group_ny_theme_settings",
+    "title": "Theme Settings",
+    "fields": [
+        {
+            "key": "field_ny_settings_tab_header",
+            "label": "Header",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_ny_settings_main_logo",
+            "label": "Logo (SVG code)",
+            "name": "main_logo",
+            "type": "textarea",
+            "instructions": "Paste the SVG code of the logo. Add a <title> inside the SVG with the organisation name, so screen readers can announce it. If empty, the site title is shown.",
+            "required": 0,
+            "rows": 6,
+            "new_lines": ""
+        },
+        {
+            "key": "field_ny_settings_tab_home",
+            "label": "Home",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_ny_settings_masthead_text",
+            "label": "Masthead text",
+            "name": "masthead_text",
+            "type": "textarea",
+            "instructions": "Large text over the home page masthead. The page heading (h1) comes from the Hero block on the home page.",
+            "required": 0,
+            "rows": 3,
+            "new_lines": ""
+        },
+        {
+            "key": "field_ny_settings_masthead_svg",
+            "label": "Masthead SVG",
+            "name": "masthead_svg",
+            "type": "textarea",
+            "instructions": "Paste the SVG code shown in the home page masthead, for example the logo.",
+            "required": 0,
+            "rows": 6,
+            "new_lines": ""
+        },
+        {
+            "key": "field_ny_settings_tab_footer",
+            "label": "Footer",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_ny_settings_contact_button",
+            "label": "Contact button",
+            "name": "contact_button",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "return_format": "array"
+        },
+        {
+            "key": "field_ny_settings_address_heading",
+            "label": "Address heading",
+            "name": "address_heading",
+            "type": "text",
+            "instructions": "",
+            "required": 0
+        },
+        {
+            "key": "field_ny_settings_address",
+            "label": "Address",
+            "name": "address",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "rows": 4,
+            "new_lines": "br"
+        },
+        {
+            "key": "field_ny_settings_phone",
+            "label": "Telephone",
+            "name": "phone",
+            "type": "text",
+            "instructions": "As it should be displayed, for example +44 (0)131 240 5000. The link is created automatically.",
+            "required": 0
+        },
+        {
+            "key": "field_ny_settings_email",
+            "label": "Email",
+            "name": "email",
+            "type": "email",
+            "instructions": "",
+            "required": 0
+        },
+        {
+            "key": "field_ny_settings_social_links",
+            "label": "Social media links",
+            "name": "social_links",
+            "type": "repeater",
+            "instructions": "Shown in the footer separated by a slash, for example Facebook / Instagram.",
+            "required": 0,
+            "layout": "table",
+            "button_label": "Add link",
+            "min": 0,
+            "max": 0,
+            "sub_fields": [
+                {
+                    "key": "field_ny_settings_social_label",
+                    "label": "Name",
+                    "name": "label",
+                    "type": "text",
+                    "required": 1,
+                    "parent_repeater": "field_ny_settings_social_links"
+                },
+                {
+                    "key": "field_ny_settings_social_url",
+                    "label": "URL",
+                    "name": "url",
+                    "type": "url",
+                    "required": 1,
+                    "parent_repeater": "field_ny_settings_social_links"
+                }
+            ]
+        },
+        {
+            "key": "field_ny_settings_legal_text",
+            "label": "Legal text",
+            "name": "legal_text",
+            "type": "wysiwyg",
+            "instructions": "The legal links below it come from the \"Footer menu\" in Appearance > Menus.",
+            "required": 0,
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "theme-general-settings"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1793815362
+}

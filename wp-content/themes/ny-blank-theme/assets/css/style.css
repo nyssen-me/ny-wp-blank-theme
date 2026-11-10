@@ -1,0 +1,60 @@
+/*! **********************************************
+  * Filename: style.css
+  * Website: Hillside CSS Framework
+  * Author: Hillside Agency
+  * Author URI: https://www.hillside.agency/
+  * Date: 24/07/2023
+  * Version: 1.0
+**************************************************/
+
+/* Core variables */
+@import "src/variables.css";
+
+/* Reset and dependencies */
+@import "src/reset.css";
+
+/* Universal seletors */
+@import "src/general.css";
+
+/* Helpers classes */
+@import "src/helpers.css";
+
+/* https://milligram.io */
+@import "src/buttons.css";
+@import "src/forms.css";
+@import "src/grids.css";
+
+/* Components */
+@import "src/cards.css";
+@import "src/lists.css";
+@import "src/navs.css";
+
+/* Header classes */
+@import "src/header.css";
+
+/* Masthead classes */
+@import "src/masthead.css";
+
+/* Sections classes */
+@import "src/sections.css";
+
+/* Block classes (ACF blocks in templates/blocks/) */
+@import "src/blocks.css";
+
+/* Footer classes */
+@import "src/footer.css";
+
+/* Pages classes */
+@import "src/pages.css";
+
+/* Blog classes */
+@import "src/posts.css";
+
+/* JS plugins classes */
+@import "src/plugins/smartmenus.css";
+@import "src/plugins/blazy.css";
+@import "src/plugins/splide.css";
+
+/* WordPress plugins classes */
+/*@import "woocommerce.css";*/
+

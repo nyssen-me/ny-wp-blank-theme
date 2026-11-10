@@ -1,0 +1,222 @@
+/*! Masthead */
+/* ==========================================================================*/
+
+/* Masthead heights */
+:root {
+    --masthead-height-25: 25vh;
+    --masthead-height-30: 30vh;
+    --masthead-height-40: 40vh;
+    --masthead-height-50: 50vh;
+    --masthead-height-60: 60vh;
+    --masthead-height-70: 70vh;
+    --masthead-height-100: 100vh;
+}
+
+.masthead {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: var(--masthead-height-50);
+    width: 100%;
+    overflow: hidden;
+}
+
+.masthead-full {
+    height: var(--masthead-height-100);
+}
+
+.masthead-page {
+    position: relative;
+    height: var(--masthead-height-30);
+    width: 100%;
+    overflow: hidden;
+    margin-top: 12rem;
+}
+
+.masthead-post {
+    position: relative;
+    height: 12rem;
+    width: 100%;
+    overflow: hidden;
+    margin-top: 0;
+}
+
+.masthead > picture,
+.masthead-page > picture {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: auto;
+    left: 0;
+    height: var(--masthead-height-50);
+    width: 100%;
+    z-index: 0;
+    background-color: var(--font-primary);
+}
+
+.masthead-full > picture {
+    height: var(--masthead-height-100);
+}
+
+.masthead-page > picture {
+    height: var(--masthead-height-30);
+}
+
+.masthead > picture > img,
+.masthead-page > picture > img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: auto;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.masthead .masthead-logo,
+.masthead .masthead-content {
+    position: relative;
+    display: flex;
+    margin-top: 2rem;
+}
+
+.masthead .masthead-logo {
+    height: 55%;
+}
+
+.masthead .masthead-content {
+    color: var(--bg-primary);
+    font-size: var(--font-size-xxxl);
+    line-height: 1.1;
+    font-weight: 700;
+    max-width: 902px;
+    text-shadow: 1px 3px 6px rgba(0,0,0,0.2),
+                 0px -5px 35px rgba(255,255,255,0.3);
+    
+    @media screen and (max-width: 768px) {
+        padding: 0 2rem;
+    }
+}
+
+.masthead .masthead-logo svg {
+    fill: var(--bg-primary);
+    filter: drop-shadow(1px 3px 6px rgba(0,0,0,0.2));
+}
+
+.masthead-page .page-heading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    max-width: 1514px;
+    padding: 2rem 25% 2rem 3rem;
+    padding: 2rem 3rem;
+    margin: 0 auto;
+    color: var(--bg-primary);
+    position: relative;
+    z-index: 9;
+}
+
+.page-heading .page-title {
+    font-size: --font-size-xxxl;
+    margin-bottom: 1.4rem;
+    line-height: 1.1;
+    text-shadow: 0px 0px 7px rgba(0, 0, 0, 0.5);
+}
+
+.page-heading p {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0;
+    line-height: 1.2;
+    text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+}
+
+.page-heading .page-title,
+.page-heading p {
+    max-width: 1024px;
+}
+
+.masthead .gradient-svg,
+.masthead-full .gradient-svg,
+.masthead-page .gradient-svg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+.masthead .gradient-svg {
+    height: var(--masthead-height-50);
+}
+
+.masthead-full .gradient-svg {
+    height: var(--masthead-height-100);
+}
+
+.masthead .fade-top,
+.masthead-page .fade-top {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: var(--masthead-height-50);
+    background: rgba(36,37,82,1);
+    background: -moz-linear-gradient(180deg, rgba(36, 37, 82, 1) 0%, rgba(36, 37, 82, 0.7) 30%, rgba(36, 37, 82, 0.1) 100%);
+    background: -webkit-linear-gradient(180deg, rgba(36, 37, 82, 1) 0%, rgba(36, 37, 82, 0.7) 30%, rgba(36, 37, 82, 0.1) 100%);
+    background: linear-gradient(180deg, rgba(36, 37, 82, 1) 0%, rgba(36, 37, 82, 0.7) 30%, rgba(36, 37, 82, 0.1) 100%);
+}
+
+.masthead-full .fade-top {
+    height: var(--masthead-height-100);
+}
+
+.masthead-page .gradient-svg,
+.masthead-page .fade-top {
+    height: var(--masthead-height-30);
+}
+
+.masthead .hero-button {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    overflow: hidden;
+}
+
+.masthead-full .hero-button {
+    position: absolute;
+    width: 4.8rem;
+    height: 4.8rem;
+    bottom: 0;
+    right: 4rem;
+    margin: 0;
+    clip-path: none;
+    overflow: visible;
+    
+    @media screen and (max-width: 1024px) {
+        right: 2rem;
+    }
+}
+
+.masthead-full .hero-button .scroll-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 4.8rem;
+    height: 4.8rem;
+    margin: 0;
+    background-color: var(--bg-primary);
+    transform: rotate(90deg);
+}
+
+.masthead-full .hero-button .scroll-btn svg {
+    fill: var(--font-primary);
+}

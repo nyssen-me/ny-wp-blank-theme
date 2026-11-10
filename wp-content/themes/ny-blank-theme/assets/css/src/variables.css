@@ -1,0 +1,157 @@
+/*! Variables */
+/* ==========================================================================*/
+
+/*  Colors */
+:root {
+    --bg-primary: #FFFFFF;
+    --bg-secondary: #F1F1F1;
+    --bg-tertiary: #CCCCCC;
+    
+    --font-primary: #2B2E34;
+    --font-secondary: #2B2E34;
+    --font-tertiary: #2B2E34;
+    
+    --primary: #39B08F;
+    --secondary: #FFD662;
+    --tertiary: #EE9BAF;
+    
+    --primary-light: #A3E1CF;
+    --secondary-light: #FFE9AD;
+    --tertiary-light: #F6CBD5;
+    
+    --cta-primary: #39B08F;
+    --cta-secondary: #FFD662;
+    --cta-tertiary: #EE9BAF;
+    --cta-hover-primary: #39B08F;
+    --cta-hover-secondary: #FFD662;
+    --cta-hover-tertiary: #EE9BAF;
+    
+    --success: #28a745;
+    --warning: #ffc107;
+    --alert: #dc3545;
+    
+    /* Social colors */
+    --facebook: #3b5998; /*//rgba(59, 89, 152, 1);*/
+    --twitter: #55acee; /*//rgba(85, 172, 238, 1);*/
+    --instagram: #405DE6; /*//rgba(5, 10, 230, 1);*/
+    --linkedin: #0075b5; /*//rgba(0, 119, 181, 1);*/
+    --whatsapp: #25D366; /*//rgba(37, 211, 102, 1);*/
+    --youtube: #cd201f; /*//rgba(205, 32, 31, 1);*/
+}
+
+/* Theme swithcer */
+/*.dark-theme {}
+
+.high-contrast {}
+
+.greyscale {}*/
+
+
+/* Font family */
+:root {
+    --body-font: 'Open Sans', sans-serif;
+    --headings-font: 'Open Sans', sans-serif;
+}
+
+
+/* Font size */
+/* 
+ * https://www.fluid-type-scale.com 
+ * Fluid font size variables, for browsers that support clamp 
+*/
+@supports (font-size: clamp(1rem, 1vw, 1rem)) {
+    :root {
+        --font-size-sm: clamp(0.8rem, -0.2vw + 0.8rem, 0.7rem);
+        --font-size-base: clamp(1rem, 0vw + 1rem, 1rem);
+        --font-size-md: clamp(1.3rem, 0.3vw + 1.2rem, 1.5rem);
+        --font-size-lg: clamp(1.6rem, 0.9vw + 1.3rem, 2.3rem);
+        --font-size-xl: clamp(2rem, 1.8vw + 1.5rem, 3.4rem);
+        --font-size-xxl: clamp(2.4rem, 3.3vw + 1.6rem, 5.1rem);
+        --font-size-xxxl: clamp(3.1rem, 5.7vw + 1.6rem, 7.6rem);
+    }
+}
+/* Fallback variables for browsers that don't support clamp */
+@supports not (font-size: clamp(1rem, 1vw, 1rem)) {
+    :root {
+        --font-size-sm: 0.8rem;
+        --font-size-base: 1rem;
+        --font-size-md: 1.3rem;
+        --font-size-lg: 1.6rem;
+        --font-size-xl: 2rem;
+        --font-size-xxl: 2.4rem;
+        --font-size-xxxl: 3.1rem;
+    }
+    @media screen and (min-width: 1680px) {
+        :root {
+            --font-size-sm: 0.7rem;
+            --font-size-base: 1rem;
+            --font-size-md: 1.5rem;
+            --font-size-lg: 2.3rem;
+            --font-size-xl: 3.4rem;
+            --font-size-xxl: 5.1rem;
+            --font-size-xxxl: 7.6rem;
+        }
+    }
+}
+
+/* Self hosted fonts */
+/* open-sans-regular - latin */
+/* google-webfonts-helper https://gwfh.mranftl.com/fonts/ */
+/* open-sans-regular - latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../../fonts/open-sans-v35-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* open-sans-700 - latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../../fonts/open-sans-v35-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* open-sans-800 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 800;
+  src: url('../../fonts/open-sans-v35-latin-800.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+
+/* Utilities */
+:root {
+    --icon-size: 3rem;
+    --icon-size-sm: 1.5rem;
+    --icon-size-lg: 6rem;
+}
+
+.svg-icon {
+    height: var(--icon-size);
+    width: var(--icon-size);
+    min-height: var(--icon-size);
+    min-width: var(--icon-size);
+    vertical-align: middle;
+}
+
+.svg-icon-sm {
+    height: var(--icon-size-sm);
+    width: var(--icon-size-sm);
+    min-height: var(--icon-size-sm);
+    min-width: var(--icon-size-sm);
+    vertical-align: middle;
+}
+
+.svg-icon-lg {
+    height: var(--icon-size-lg);
+    width: var(--icon-size-lg);
+    min-height: var(--icon-size-lg);
+    min-width: var(--icon-size-lg);
+    vertical-align: middle;
+}

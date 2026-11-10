@@ -1,0 +1,192 @@
+/*! Buttons */
+/* ==========================================================================*/
+/*
+ * Custom Milligram Hillside v1.2
+ * Based on Milligram v1.4.1 - https://milligram.io
+*/
+.buttons {
+    display: block;
+}
+
+.button,
+button,
+input[type='button'],
+input[type='reset'],
+input[type='submit'] {
+    background-color: var(--cta-primary);
+    border: 0.15rem solid var(--cta-primary);
+    border-radius: 0;
+    color: var(--font-primary);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    font-size: clamp(1.6rem, 0.9vw + 1.3rem, 2rem);
+    font-weight: 700;
+    height: 4rem;
+    letter-spacing: 0.1rem;
+    line-height: 4rem;
+    padding: 0 3rem;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    transition-property: all;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-out;
+}
+
+.button:focus,
+.button:hover,
+button:focus,
+button:hover,
+input[type='button']:focus,
+input[type='button']:hover,
+input[type='reset']:focus,
+input[type='reset']:hover,
+input[type='submit']:focus,
+input[type='submit']:hover {
+    outline: 0;
+    color: var(--font-tertiary);
+    background-color: var(--cta-secondary);
+    border-color: var(--cta-secondary);
+}
+
+.button[disabled],
+button[disabled],
+input[type='button'][disabled],
+input[type='reset'][disabled],
+input[type='submit'][disabled] {
+    cursor: default;
+    opacity: .5;
+}
+
+.button[disabled]:focus,
+.button[disabled]:hover,
+button[disabled]:focus,
+button[disabled]:hover,
+input[type='button'][disabled]:focus,
+input[type='button'][disabled]:hover,
+input[type='reset'][disabled]:focus,
+input[type='reset'][disabled]:hover,
+input[type='submit'][disabled]:focus,
+input[type='submit'][disabled]:hover {
+    color: var(--cta-primary);
+}
+
+.button.button-outline,
+button.button-outline,
+input[type='button'].button-outline,
+input[type='reset'].button-outline,
+input[type='submit'].button-outline {
+    background-color: transparent;
+    color: var(--font-primary);
+}
+
+.button.button-outline:focus,
+.button.button-outline:hover,
+button.button-outline:focus,
+button.button-outline:hover,
+input[type='button'].button-outline:focus,
+input[type='button'].button-outline:hover,
+input[type='reset'].button-outline:focus,
+input[type='reset'].button-outline:hover,
+input[type='submit'].button-outline:focus,
+input[type='submit'].button-outline:hover {
+    background-color: transparent;
+    border-color: var(--cta-secondary);
+    color: var(--font-tertiary);
+}
+
+.button.button-outline[disabled]:focus,
+.button.button-outline[disabled]:hover,
+button.button-outline[disabled]:focus,
+button.button-outline[disabled]:hover,
+input[type='button'].button-outline[disabled]:focus,
+input[type='button'].button-outline[disabled]:hover,
+input[type='reset'].button-outline[disabled]:focus,
+input[type='reset'].button-outline[disabled]:hover,
+input[type='submit'].button-outline[disabled]:focus,
+input[type='submit'].button-outline[disabled]:hover {
+    border-color: inherit;
+    color: var(--font-tertiary);
+}
+
+.button.button-clear,
+button.button-clear,
+input[type='button'].button-clear,
+input[type='reset'].button-clear,
+input[type='submit'].button-clear {
+    background-color: transparent;
+    border-color: transparent;
+    color: var(--cta-primary);
+}
+
+.button.button-clear:focus,
+.button.button-clear:hover,
+button.button-clear:focus,
+button.button-clear:hover,
+input[type='button'].button-clear:focus,
+input[type='button'].button-clear:hover,
+input[type='reset'].button-clear:focus,
+input[type='reset'].button-clear:hover,
+input[type='submit'].button-clear:focus,
+input[type='submit'].button-clear:hover {
+    background-color: transparent;
+    border-color: transparent;
+    color: var(--font-primary);
+}
+
+.button.button-clear[disabled]:focus,
+.button.button-clear[disabled]:hover,
+button.button-clear[disabled]:focus,
+button.button-clear[disabled]:hover,
+input[type='button'].button-clear[disabled]:focus,
+input[type='button'].button-clear[disabled]:hover,
+input[type='reset'].button-clear[disabled]:focus,
+input[type='reset'].button-clear[disabled]:hover,
+input[type='submit'].button-clear[disabled]:focus,
+input[type='submit'].button-clear[disabled]:hover {
+    color:  var(--font-primary);
+}
+
+/* Small */
+.button-small {
+    font-size: clamp(1.4rem, 0.9vw + 1.3rem, 1.6rem);
+    height: 3.6rem;
+    line-height: 3.6rem;
+    padding: 0 2.4rem;
+}
+
+/* Button with arrow */
+.button-arrow {
+    padding: 0 0.1rem;
+}
+
+.button-arrow::before {
+    content: '';
+    display: block;
+    width: 3.2rem;
+    height: 2.4rem;
+    margin: auto 1.5rem auto 0;
+    transform: translateX(0);
+    
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xml:space='preserve' style='enable-background:new 0 0 32 24' viewBox='0 0 32 24'%3E%3Cpath d='m22.8 4.6-.9 1.2 6.6 5.4H.4v1.6h28.1l-6.6 5.4.9 1.2 9-7.4z'/%3E%3C/svg%3E");
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xml:space='preserve' style='enable-background:new 0 0 32 24' viewBox='0 0 32 24'%3E%3Cpath d='m22.8 4.6-.9 1.2 6.6 5.4H.4v1.6h28.1l-6.6 5.4.9 1.2 9-7.4z'/%3E%3C/svg%3E");
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 3.2rem 2.4rem;
+    mask-size: 3.2rem 2.4rem;
+    -webkit-mask-position: center center;
+    mask-position: center center;
+    background-color: var(--font-primary);
+    
+    -webkit-transition-property: transform, background-color;
+    -webkit-transition-duration: 0.2s;
+    -webkit-transition-timing-function: ease-out;
+    transition-property: transform, background-color;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-out;
+}
+
+.button-arrow:hover::before {
+    transform: translateX(0.7rem);
+}

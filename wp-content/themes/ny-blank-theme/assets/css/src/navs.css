@@ -1,0 +1,39 @@
+/*! Navs */
+/* ==========================================================================*/
+.nav {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin: .2rem 0;
+}
+
+.nav li {
+
+    a {
+        color: var(--cta-primary);
+        padding: .2rem .4rem;
+        text-decoration: none;
+
+        &:focus,
+        &:hover {
+            color: var(--cta-primary-hover);
+        }
+    }
+}
+
+.nav li.current-menu-item > a {
+    color: var(--cta-primary-hover);
+    font-weight: bold;
+}
+
+.nav li.current-menu-item > a:focus,
+.nav li.current-menu-item > a:hover {
+    color: var(--font-color);
+}
+
+
+
+.nav & ul {
+    margin-bottom: .4rem;
+    margin-left: .8rem;
+}

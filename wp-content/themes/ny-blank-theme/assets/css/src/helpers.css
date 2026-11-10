@@ -1,0 +1,123 @@
+/*! Helpers */
+/* ==========================================================================*/
+
+/* .screen-reader-text is the class WordPress core outputs for the same purpose */
+.visually-hidden,
+.screen-reader-text {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.label-inline {
+    display: inline-block;
+    font-weight: normal;
+    margin-left: .5rem;
+}
+
+.clearfix:after {
+    clear: both;
+    content: ' ';
+    display: table;
+}
+
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
+/*// Text*/
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+.text-lowercase {
+    text-transform: lowercase;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.text-capitalize {
+    text-transform: capitalize;
+}
+
+.text-large {
+    font-size: 2rem;
+}
+
+/*// Utilities*/
+.bg-hightlight {
+    background-color: var(--hgl-secondary);
+}
+
+/* Skip to main content */
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    width: 100%;
+    font-size: 1.6rem;
+    background: var(--secondary);
+    color: var(--font-primary);
+    padding: 1rem;
+	z-index: 999;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* Media queries */
+/*
+@media screen and (max-width: 1440px) {
+     
+}
+
+@media screen and (max-width: 1280px) {
+     
+}
+
+@media screen and (max-width: 1024px) {
+     
+}
+
+@media screen and (max-width: 768px) {
+     
+}
+
+@media screen and (max-width: 600px) {
+     
+}
+
+@media screen and (max-width: 480px) {
+     
+}
+
+@media screen and (max-width: 360px) {
+     
+}
+*********/

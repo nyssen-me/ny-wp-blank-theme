@@ -1,0 +1,9 @@
+/*! Blocks */
+/* ==========================================================================*/
+
+/* Text and media (acf/text-media): swap the columns when "Image left" is chosen */
+@media (min-width: 769px) {
+    .text-media--image-left > .container > .row {
+        flex-direction: row-reverse;
+    }
+}

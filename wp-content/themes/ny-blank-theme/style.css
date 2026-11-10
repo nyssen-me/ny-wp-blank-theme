@@ -1,0 +1,16 @@
+/*
+Theme Name:        NY Blank Theme
+Author:            Nyssen DAS
+Author URI:        https://nyssen.me
+Description:       Hybrid starter theme for Nyssen DAS client sites. Classic PHP templates with theme.json, and a locked-down block editor that offers curated ACF blocks only.
+Version:           1.0.0
+Requires at least: 7.0
+Tested up to:      7.1
+Requires PHP:      8.1
+License:           GNU General Public License v2 or later
+License URI:       https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain:       ny-blank-theme
+Domain Path:       /languages
+*/
+
+/* Theme header only. Styles are compiled from assets/scss into assets/css. */

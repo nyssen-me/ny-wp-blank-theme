@@ -1,0 +1,46 @@
+/*! Footer */
+/* ==========================================================================*/
+
+.footer {
+    background-color: var(--secondary);
+    margin-top: 6rem;
+    padding: 4rem 4rem 0;
+}
+
+.footer a {
+    color: var(--font-primary);
+    font-weight: 400;
+    text-decoration: underline;
+    text-decoration-color: var(--font-primary);;
+    text-decoration-thickness: max(0.5px, 0.05rem);
+    text-underline-offset: .1em;
+	transition: text-decoration-color 0.3s;
+}
+
+.footer a:hover,
+.footer a:focus {
+    text-decoration-color: transparent;
+}
+
+.footer strong a {
+    font-weight: 700;
+}
+
+.container-footer {
+    font-size: 1.4rem;
+}
+
+.container-footer .row .column {
+    padding-bottom: 2.6rem;
+}
+
+.contact-media {
+    list-style: none;
+    margin: 0;
+}
+
+.contact-media li {
+    margin: 0;
+}
+
+/* Back to top */

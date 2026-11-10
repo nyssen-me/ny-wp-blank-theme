@@ -1,0 +1,68 @@
+/*! Plugins */
+/* ==========================================================================*/
+/*!
+  hey, [be]Lazy.js - v1.8.2 - 2016.10.25 
+  A fast, small and dependency free lazy load script (https://github.com/dinbror/blazy)
+  (c) Bjoern Klinggaard - @bklinggaard - http://dinbror.dk/blazy
+*/
+/*// images not diplaying on Safari, fix here https://github.com/dinbror/blazy/issues/125*/
+.b-lazy {
+	min-height: 1px;
+}
+
+.b-lazy.effect1 {
+   opacity: 0;
+   transition: opacity 1s ease-out;
+}
+
+.b-lazy.effect1.b-loaded {
+   opacity: 1;
+}
+
+.b-lazy.effect2 {
+    opacity: 0;
+    transition: opacity 2s ease-out;
+}
+
+.b-lazy.effect2.b-loaded {
+   opacity: 1;
+}
+
+.b-lazy.effect3 {
+    opacity: 0;
+    transition: opacity 3s ease-out;
+}
+
+.b-lazy.effect3.b-loaded {
+   opacity: 1;
+}
+
+.b-lazy.effect-transform {
+    opacity: 0;
+	transform: scale(1.025);
+	transform-origin: bottom center;
+	transition-property: opacity, transform;
+	transition-duration: 2s;
+	transition-timing-function: ease-in;
+}
+
+.b-lazy.effect-transform.b-loaded {
+	opacity: 1;
+	transform: scale(1);
+}
+
+.b-lazy.effect-filter {
+    opacity: 0;
+    -webkit-filter: brightness(140%) saturate(140%);
+    filter: brightness(140%) saturate(140%);
+    transition-property: opacity, filter;
+	transition-duration: 1s, 3s;
+    /*//transition-delay: 0, 8s;*/
+	transition-timing-function: ease-in;
+}
+
+.b-lazy.effect-filter.b-loaded {
+	opacity: 1;
+    -webkit-filter: brightness(100%) saturate(100%);
+    filter: brightness(100%) saturate(100%);
+}

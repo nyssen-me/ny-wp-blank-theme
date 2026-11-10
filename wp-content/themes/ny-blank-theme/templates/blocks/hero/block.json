@@ -1,0 +1,28 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "acf/hero",
+	"title": "Hero",
+	"description": "Page heading with an optional intro, button and image.",
+	"category": "ny-blocks",
+	"icon": "cover-image",
+	"keywords": [ "header", "banner", "intro" ],
+	"textdomain": "ny-blank-theme",
+	"acf": {
+		"blockVersion": 3,
+		"mode": "preview",
+		"renderTemplate": "render.php"
+	},
+	"supports": {
+		"align": false,
+		"anchor": true,
+		"html": false,
+		"customClassName": false,
+		"customCSS": false,
+		"multiple": false,
+		"color": false,
+		"spacing": false,
+		"typography": false,
+		"jsx": true
+	}
+}
