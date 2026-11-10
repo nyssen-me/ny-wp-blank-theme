@@ -5,7 +5,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    background-color: var(--bg-primary);
+    background-color: var(--primary);
     padding: 0 4rem;
     
     position: fixed;
@@ -23,10 +23,6 @@
     @media screen and (max-width: 768px) {
         align-items: flex-start;
     }
-}
-
-.home .main-header {
-    background-color: transparent;
 }
 
 .scrolled.main-header {
