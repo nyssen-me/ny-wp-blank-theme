@@ -17,7 +17,7 @@ get_header();
 	<?php while ( have_posts() ) : ?>
 		<?php the_post(); ?>
 		<section>
-			<div class="container container-wide padding-long padding-top-none">
+			<div class="container container-narrow">
 
 				<div class="grid-wrapper">
 
