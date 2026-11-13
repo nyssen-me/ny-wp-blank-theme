@@ -1,9 +1,9 @@
 {
-    "key": "group_6a0dd294dbc2a",
+    "key": "group_ny_developer_notes",
     "title": "Developer notes",
     "fields": [
         {
-            "key": "field_6a0dd41788d30",
+            "key": "field_ny_dev_notes",
             "label": "Notes",
             "name": "notes",
             "aria-label": "",
@@ -26,7 +26,7 @@
             "rows_per_page": 20,
             "sub_fields": [
                 {
-                    "key": "field_6a0dd47688d31",
+                    "key": "field_ny_dev_notes_date",
                     "label": "Date",
                     "name": "date",
                     "aria-label": "",
@@ -43,11 +43,11 @@
                     "display_format": "d\/m\/Y",
                     "return_format": "d\/m\/Y",
                     "first_day": 1,
-                    "parent_repeater": "field_6a0dd41788d30",
+                    "parent_repeater": "field_ny_dev_notes",
                     "default_to_current_date": 0
                 },
                 {
-                    "key": "field_6a0dd48a88d32",
+                    "key": "field_ny_dev_notes_title",
                     "label": "Title",
                     "name": "title",
                     "aria-label": "",
@@ -66,10 +66,10 @@
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
-                    "parent_repeater": "field_6a0dd41788d30"
+                    "parent_repeater": "field_ny_dev_notes"
                 },
                 {
-                    "key": "field_6a0dd49688d33",
+                    "key": "field_ny_dev_notes_note",
                     "label": "Note",
                     "name": "note",
                     "aria-label": "",
@@ -88,7 +88,7 @@
                     "rows": 8,
                     "placeholder": "",
                     "new_lines": "",
-                    "parent_repeater": "field_6a0dd41788d30"
+                    "parent_repeater": "field_ny_dev_notes"
                 }
             ]
         }
@@ -114,5 +114,5 @@
     "display_title": "",
     "allow_ai_access": false,
     "ai_description": "",
-    "modified": 1790179441
+    "modified": 1794594837
 }

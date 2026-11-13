@@ -15,7 +15,7 @@
             "label": "Logo (SVG code)",
             "name": "main_logo",
             "type": "textarea",
-            "instructions": "Paste the SVG code of the logo. Add a <title> inside the SVG with the organisation name, so screen readers can announce it. If empty, the site title is shown.",
+            "instructions": "Paste the SVG code of the logo. Add a title element inside the SVG, containing the organisation name, so screen readers can announce it. If empty, the site title is shown.",
             "required": 0,
             "rows": 6,
             "new_lines": ""
@@ -159,5 +159,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1793815362
+    "modified": 1794595259
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * ACF settings: Local JSON, and a notice when ACF PRO is missing.
+ * ACF settings: Local JSON, options pages, and a notice when ACF PRO is missing.
  *
  * Field groups are built in the ACF admin locally and saved to acf-json/ so they are
  * version-controlled. For staging and production they are exported to PHP files in
@@ -43,7 +43,8 @@ function ny_acf_l10n_textdomain() {
 add_filter( 'acf/settings/l10n_textdomain', 'ny_acf_l10n_textdomain' );
 
 /**
- * Registers the Theme Settings options page (logo and footer details).
+ * Registers the options pages: Theme Settings (logo and footer details) and
+ * Dev Notes (notes for developers, administrators only).
  */
 function ny_acf_options_pages() {
 	if ( ! function_exists( 'acf_add_options_page' ) ) {
@@ -56,6 +57,19 @@ function ny_acf_options_pages() {
 			'menu_title' => __( 'Theme Settings', 'ny-blank-theme' ),
 			'menu_slug'  => 'theme-general-settings',
 			'capability' => 'edit_posts',
+			'redirect'   => false,
+		]
+	);
+
+	// Administrators only, so editors never see the developer notes.
+	acf_add_options_page(
+		[
+			'page_title' => __( 'Developer Notes', 'ny-blank-theme' ),
+			'menu_title' => __( 'Dev Notes', 'ny-blank-theme' ),
+			'menu_slug'  => 'developer-notes',
+			'capability' => 'manage_options',
+			'icon_url'   => 'dashicons-editor-code',
+			'position'   => 99,
 			'redirect'   => false,
 		]
 	);
