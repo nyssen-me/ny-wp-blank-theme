@@ -299,6 +299,13 @@ add_filter( 'block_categories_all', function ( $categories ) {
 - When preparing for staging/production, export field groups to PHP under `functions/acf/` (e.g. `functions/acf/fields-hero.php`) and load them from `functions/acf.php`
 - Ask Sergi before changing this workflow
 
+**Editing `acf-json/*.json` by hand (always follow this):**
+
+- Set `"modified"` to the current Unix timestamp in every JSON file you change. Without it, ACF does not offer a sync, the GUI keeps showing the old database copy, and the next save in the GUI overwrites the JSON, so the hand edits are lost without warning
+- Always edit the current file on disk, never an older copy, otherwise changes saved in the GUI are lost
+- After the edit, tell Sergi to go to ACF > Field Groups > **Sync available**, check **Review changes** and **Sync** before editing that group in the GUI
+- Why: the GUI edit screen reads only the database copy, while the front end and block editor read the JSON. Saving in the GUI rewrites the whole JSON file from the database, and "Sync available" only appears when the JSON `modified` value is newer than the database copy
+
 Theme Settings options page (`functions/acf.php`, slug `theme-general-settings`, capability `edit_posts`), with the field group in `acf-json/group_ny_theme_settings.json`. Field names match the old theme: `main_logo` (SVG code, output through `ny_kses_svg()`, also used as the login page logo), `masthead_text` and `masthead_svg` (home masthead), `contact_button`, `address_heading`, `address`, `phone` (the `tel:` link is derived from it), `email`, `social_links` (repeater: `label`, `url`), `legal_text`. The footer legal links come from the "Footer menu" location. Read options with `get_field( 'name', 'option' )`.
 
 ### 6. Locking
